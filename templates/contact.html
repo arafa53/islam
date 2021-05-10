@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Contact{% endblock title %}</title>
+{% block contactactive %}active{% endblock contactactive %}
+
+
+
+<body>
+  
+  {% block body %}
+  
+  <style>
+
+    body{
+      background-color: #4267B2;
+    }  
+  
+  .fab{
+    background-color: rgb(9, 10, 8);
+    color: white;
+    height: 25px;
+    width: 55px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 10px;
+    margin:10px 0 50px ;
+  }
+  
+  .fa-facebook-f:hover{
+       color: #4267B2;
+  }
+  .fa-google:hover{
+    color: #4285F4;
+  }
+  .fa-instagram:hover{
+    color: #FCAF45;
+  }
+  .text{
+    color: yellow;
+  }
+  </style>
+
+
+
+  <div class="container mt-4">
+    <h2 class="text-center font-weight-bold text-white"><b class="text">Contact </b>  us</h2>
+    <form action="contact" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label class="form-sec font-weight-bold text-white" for="name">Enter your name</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter name here">
+      </div>
+      <div class="form-group">
+        <label class="form-sec font-weight-bold text-white" for="email">Enter your email</label>
+        <input type="email" class="form-control" name="email" placeholder="name@example.com">
+      </div>
+      <div class="form-group">
+        <label class="form-sec font-weight-bold text-white" for="phone">Enter your number</label>
+        <input type="phone" class="form-control" name="phone" placeholder="Your mobile number">
+      </div>
+      <div class="form-group">
+        <label class="form-sec font-weight-bold text-white" for="content">Described here</label>
+        <textarea class="form-control" name="content" rows="3" placeholder="Enter your messages here"></textarea>
+
+      </div>
+      <button type="submit" class="btn">Submit</button>
+      <h4 class="text-center text-white font-weight-bold">Log in</h4>
+      <div class="container text-center">
+        
+    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.gmail.com/" target="_blank"><i class="fab fa-google"></i></a>
+    
+  </div>
+  </form>
+    
+  </div>
+
+
+  
+
+  {% endblock body %}
+  
+
+</body>
+
+</html>

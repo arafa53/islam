@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}
+Homeviews
+{% endblock title %}
+{% block body %}
+<div class="container  my-1">
+    <div class="row">
+        <div class="col-sm-12 mt-1 mb-1">
+            <div class="card">
+                <div class="card-body my-3">
+                  
+                    <h5 class="card-title my-3">{{post.title}}</h5>
+                    <p class="card-text">
+                     {{post.content}}
+                    </p>
+                    <p class="card-text"><small class="text-muted"><b> {{post.author}}</b> at {{post.timestamp}}</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if user.is_authenticated %}
+  
+
+  
+
+<div class="container">
+<h2 class="mt-3 text-white">Comment: ({{comments.count}})</h2>
+<form method="POST" action="/myapp/homeComment">
+{% csrf_token %}
+  <div class="mt-3 text-white font-weight-bold">
+    <label for="exampleFormControlTextarea1 ">Comment here</label>
+    <input type="text" name="comment" class="form-control"  >
+  </div>
+<input type="hidden" value="{{post.sno}}" name="postSno" class="form-control">
+<button type="submit" class="btn btn-primary mt-3 mb-3">Submit</button>
+
+</form>
+</div>
+{% else %}
+<div class="container text-white my-4">
+<h4>Please login to comment</h4>
+</div>
+{% endif %}
+
+<div class="container">
+{% for comment in comments %}
+<div class="row mt-4 text-white">
+
+<div class="col-md-1 ">
+
+<img src="/static/man.png" class=" rounded " style="width:85px" alt="Responsive image">
+
+</div>
+<div class="col-md-11">
+<p class="card-text font-weight-bold">{{comment.comment}}</p>
+  <div>  <p class="card-text "><small class=" text-white font-weight-bold">{{comment.timestamp}}</small></p>
+  
+  </div>
+  
+</div>
+
+</div>
+{% endfor %}
+</div>
+
+
+
+
+
+
+{% endblock body %}

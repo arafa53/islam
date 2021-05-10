@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock title %}
+{% block aboutactive %}active{% endblock aboutactive %}
+{% block body %}
+<style>
+  body{
+  background-color: #4267B2;
+
+  }
+  .card-body{
+    border: 1px solid white;
+  }
+  .col-md-12{
+    font-size: 1.2rem;
+  }
+  .text{
+    color: yellow;
+  }
+
+</style>
+  <h1 class="text-center text-white font-weight-bold mt-4 ">Who we <b class="text"> are??</b></h1>
+<div class="container text-center mt-3">
+  <!-- If image need then use 
+  <div class="card mb-3 bg-transparent text-white ">
+    <div class="row">
+      <div class="col-md-12 no-gutters">
+        
+        <img src="/static/02.jpg" class="card-img img-thumbnail" style="height: 320px;" alt="...">
+-->
+      
+      <div class="col-md-12 text-center text-white-50 font-weight-bold ">
+        <div class="card-body">
+          <p class="card-text text-white">"Hailing from a middle class family of Bangladesh, I am Arafa islam.
+            No one comes in this world at the stage where I am right now, without the support of family and friends. In fact, what I am today, is because of my family.
+            Reading is my passion. I am an avid reader of Novels and history books. I have a keen interest in Programming and Web development.
+            I love to read books that describe the rich history and civilization of Bangladesh. Apart from history, I love to read the novels of Shakespeare.
+            I love time management and discipline in life. I have learned all of these value from my parents. My father is my true inspiration.
+            My life is full of experiments and achievements. I have got success many times and many times I have failed also. This all has truly taught me the importance of rising again and strike again.
+           I continue to update myself to be the better version of myself.
+            Although no one can be described in a few set of sentences. One need to have though command of oneself before going to write something about his life.
+            That’s to say my life has become what is,  an essence of all of my achievements and struggles"
+           <hr>
+           <h5 class="text-white"> Arafa islam</h5>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  {% endblock body %}
